@@ -1,12 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const Box = (props) => {
+
+  const img = () => {
+    if(props.item !== undefined) {
+      return (
+        <img src={props.item && props.item.url} alt={props.item?.name}/>
+      )
+    }
+  }
+
+  useEffect(() => {
+    img()
+  }, []);
+
   return (
     <>
       <div className={`box ${props.result}`}>
         <div>{props.title}</div>
         <div className="img-box">
-          <img className="image" src={props.item && props.item.url} alt={props.item?.name}/>
+          {img()}
         </div>
         <div>{props.item && props.item.name}</div>
         <div className='result'>

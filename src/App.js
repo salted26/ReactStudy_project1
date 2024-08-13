@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
 import Box from './component/Box';
 
@@ -14,7 +14,7 @@ const choice = {
   paper: {
     name: 'paper',
     url: "https://blog.kakaocdn.net/dn/bmjB2s/btqXHhp6kpG/TH14W4U612SxKo9uuR2sB0/img.png"
-  }
+  },
 }
 
 // box 2개
@@ -25,8 +25,8 @@ const choice = {
 // 5. 승패 결과에 따라 테두리의 색이 바뀐다. (detail / 빨강, 초록, 검정)
 function App() {
 
-  const [select, setSelect] = useState('');
-  const [comSelect, setComSelect] = useState('');
+  const [select, setSelect] = useState();
+  const [comSelect, setComSelect] = useState();
   const [userResult, setUserResult] = useState('');
   const [comResult, setComResult] = useState('');
 
