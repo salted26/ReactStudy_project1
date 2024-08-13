@@ -12,7 +12,7 @@ const Box = (props) => {
 
   useEffect(() => {
     img()
-  }, []);
+  }, [props]);
 
   return (
     <>
