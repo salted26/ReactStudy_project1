@@ -10,10 +10,6 @@ const Box = (props) => {
     }
   }
 
-  useEffect(() => {
-    img()
-  }, [props]);
-
   return (
     <>
       <div className={`box ${props.result}`}>
