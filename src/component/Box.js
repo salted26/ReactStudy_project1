@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 
 const Box = (props) => {
 
-  const img = () => {
+  const imageUrl = () => {
     if(props.item !== undefined) {
       return (
         <img src={props.item && props.item.url} alt={props.item?.name}/>
@@ -15,7 +15,7 @@ const Box = (props) => {
       <div className={`box ${props.result}`}>
         <div>{props.title}</div>
         <div className="img-box">
-          {img()}
+          {imageUrl()}
         </div>
         <div>{props.item && props.item.name}</div>
         <div className='result'>
