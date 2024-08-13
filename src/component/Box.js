@@ -6,7 +6,7 @@ const Box = (props) => {
       <div className={`box ${props.result}`}>
         <div>{props.title}</div>
         <div className="img-box">
-          <img className="image" src={props.item && props.item.url} />      
+          <img className="image" src={props.item && props.item.url} alt={props.item?.name}/>
         </div>
         <div>{props.item && props.item.name}</div>
         <div className='result'>
