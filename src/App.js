@@ -62,7 +62,7 @@ function App() {
   const comJudgeMent = (result) => {
     if (result === 'DEFEAT') { return 'DEFEAT' }
     else if (result === 'WIN') { return 'LOSE' }
-    else if (result === 'LOSE') { return 'WIN' };
+    else if (result === 'LOSE') { return 'WIN' }
   }
 
   const handleReset =()=>{
@@ -86,7 +86,7 @@ function App() {
         </div>
         <div className="bottom-btn">
           <button onClick={handleReset} className='btn'>
-            <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Farrows-directions-1%2F24%2Freset-alt-3-solid-512.png" />
+            <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Farrows-directions-1%2F24%2Freset-alt-3-solid-512.png" alt="reset"/>
           </button>
         </div>
       </div>
