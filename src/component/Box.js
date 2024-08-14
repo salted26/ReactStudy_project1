@@ -3,7 +3,7 @@ import React from 'react'
 const Box = (props) => {
 
   const imageUrl = () => {
-    if(props.item !== undefined) {
+    if(props.item !== '' || props.result !== '') {
       return (
         <img src={props.item && props.item.url} alt={props.item?.name} className="content"/>
       )

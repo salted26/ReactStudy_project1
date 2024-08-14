@@ -25,8 +25,8 @@ const choice = {
 // 5. 승패 결과에 따라 테두리의 색이 바뀐다. (detail / 빨강, 초록, 검정)
 function App() {
 
-  const [select, setSelect] = useState();
-  const [comSelect, setComSelect] = useState();
+  const [select, setSelect] = useState('');
+  const [comSelect, setComSelect] = useState('');
   const [userResult, setUserResult] = useState('');
   const [comResult, setComResult] = useState('');
 
@@ -62,7 +62,14 @@ function App() {
   const comJudgeMent = (result) => {
     if (result === 'DEFEAT') { return 'DEFEAT' }
     else if (result === 'WIN') { return 'LOSE' }
-    else if (result === 'LOSE') { return 'WIN' };
+    else if (result === 'LOSE') { return 'WIN' }
+  }
+
+  const handleReset =()=>{
+    setSelect('');
+    setComSelect('');
+    setUserResult('');
+    setComResult('');
   }
 
   return (
@@ -71,10 +78,17 @@ function App() {
         <Box title="YOU" item={select} result={userResult} />
         <Box title="COMPUTER" item={comSelect} result={comResult} />
       </div>
-      <div className='main'>
+      <div className='bottom'>
+        <div className="bottom-btn">
         <button onClick={() => play('scissors')} className='btn'><img src={choice.scissors.url} alt={choice.scissors.name} /></button>
         <button onClick={() => play('rock')} className='btn'><img src={choice.rock.url} alt={choice.rock.name} /></button>
         <button onClick={() => play('paper')} className='btn'><img src={choice.paper.url} alt={choice.paper.name} /></button>
+        </div>
+        <div className="bottom-btn">
+          <button onClick={handleReset} className='btn'>
+            <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn4.iconfinder.com%2Fdata%2Ficons%2Farrows-directions-1%2F24%2Freset-alt-3-solid-512.png" alt="reset"/>
+          </button>
+        </div>
       </div>
     </>
   );
